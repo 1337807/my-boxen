@@ -12,4 +12,3 @@ ruby::global::version: "2.2.0"
 
 # atmoshax
 boxen::config::srcdir: "/Users/atmos/p"
-boxen::config::homebrew_root: "/usr/local"
