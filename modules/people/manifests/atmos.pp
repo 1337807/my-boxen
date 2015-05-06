@@ -60,13 +60,6 @@ class people::atmos {
     require => Repository[$dotfiles]
   }
 
-  file { "${home}/.boxen/config.json":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/dot.boxen",
-    require => Repository[$dotfiles]
-  }
-
   file { "${home}/.atom":
     ensure  => link,
     force   => true,
