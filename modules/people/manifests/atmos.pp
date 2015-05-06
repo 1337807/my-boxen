@@ -1,10 +1,10 @@
 class people::atmos {
-  include vlc
-  include rdio
-  include skype
-  include chrome
-  include bash::completion
-  include tmux
+  #include vlc
+  #include rdio
+  #include skype
+  #include chrome
+  #include bash::completion
+  #include tmux
 
   $home     = '/Users/atmos'
   $dotfiles = "${home}/p/dotfiles"
