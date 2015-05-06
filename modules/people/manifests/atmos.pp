@@ -43,7 +43,7 @@ class people::atmos {
   }
 
   file {
-    ["${home}/.vimswap", "${home}/p"]:
+    ["${home}/.vimswap"]:
       ensure => directory;
   }
 
