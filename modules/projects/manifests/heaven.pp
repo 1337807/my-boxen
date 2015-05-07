@@ -1,5 +1,5 @@
-class projects::camo {
-  boxen::project { 'camo':
+class projects::heaven {
+  boxen::project { 'heaven':
     ruby       => '2.2.0',
     redis      => true,
     postgresql => true,
