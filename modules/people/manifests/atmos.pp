@@ -1,9 +1,4 @@
 class people::atmos {
-  include mysql
-  include redis
-  include postgresql
-  include bash::completion
-
   include projects::all
 
   $home     = '/Users/atmos'
