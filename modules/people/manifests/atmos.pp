@@ -1,5 +1,4 @@
 class people::atmos {
-  include tmux
   include mysql
   include redis
   include postgresql
