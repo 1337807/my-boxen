@@ -8,6 +8,7 @@
 # heart's content.
 
 # See https://github.com/boxen/puppet-ruby for docs
+ruby::provider: "rbenv"
 ruby::global::version: "2.2.2"
 
 # atmoshax
