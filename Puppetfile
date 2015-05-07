@@ -53,15 +53,15 @@ github "openssl",     "1.0.0"
 github "phantomjs",   "2.3.0"
 github "pkgconfig",   "1.0.0"
 github "postgresql",  "3.0.3"
-github "redis",       "2.8.6"
+github "redis",       "3.1.0"
 github "repository",  "2.3.0"
 github "ruby",        "8.1.7"
 github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
+github "sysctl",      "1.0.1"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
 #github "elasticsearch", "1.4.5"
-#github "inifile",       "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
 #github "mysql",         "2.0.1"
 
 
