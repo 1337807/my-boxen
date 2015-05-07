@@ -5,6 +5,8 @@ class people::atmos {
   include postgresql
   include bash::completion
 
+  include projects::all
+
   $home     = '/Users/atmos'
   $dotfiles = "${home}/p/dotfiles"
 
