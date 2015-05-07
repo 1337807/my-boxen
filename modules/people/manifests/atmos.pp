@@ -69,6 +69,13 @@ class people::atmos {
     require => Repository[$dotfiles]
   }
 
+  file { "${home}/bin":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/bin",
+    require => Repository[$dotfiles]
+  }
+
   file { '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin':
     ensure => absent,
     force  => true
@@ -81,9 +88,8 @@ class people::atmos {
     require => Repository[$dotfiles]
   }
 
-  # Shit blows up if you try to install ctags twice :'( :'(
-  # package { 'ctags-exuberant': }
-  package { [ 'coreutils', 'tmux' ]: }
+  # Stuff I need from homebrew
+  package { [ 'bash-completion', 'coreutils', 'ctags-exuberant', 'tmux' ]: }
 
   boxen::osx_defaults {
     'Disable auto-play on importing in iTunes':
