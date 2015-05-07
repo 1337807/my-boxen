@@ -83,18 +83,7 @@ class people::atmos {
 
   # Shit blows up if you try to install ctags twice :'( :'(
   # package { 'ctags-exuberant': }
-  package { [ 'coreutils' ]: }
-  #package {
-  #  'Adium':
-  #    provider => 'appdmg',
-  #    source   => 'http://downloads.sourceforge.net/project/adium/Adium_1.5.3.dmg';
-  #  'Plex':
-  #    provider => 'compressed_app',
-  #    source   => 'http://plex.r.worldssl.net/plex-laika/0.9.5.4/Plex-0.9.5.4-973998f.zip';
-  #  'Skitch':
-  #    provider => 'compressed_app',
-  #    source   => 'http://f.cl.ly/items/0V0L2B0o2X3J380R353E/Skitch-1.0.12.zip';
-  #}
+  package { [ 'coreutils', 'tmux' ]: }
 
   boxen::osx_defaults {
     'Disable auto-play on importing in iTunes':
