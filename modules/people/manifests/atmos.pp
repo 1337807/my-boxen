@@ -123,4 +123,16 @@ class people::atmos {
       domain => 'com.apple.dock',
       value  => 'right';
   }
+
+  # ensure bundler is installed for all ruby versions
+  ruby_gem { 'bundler for all rubies':
+    gem          => 'bundler',
+    version      => '~> 1.0',
+    ruby_version => '*',
+  }
+  ruby_gem { 'heroku for all rubies':
+    gem          => 'heroku',
+    version      => '~> 3.36.0',
+    ruby_version => '*',
+  }
 }

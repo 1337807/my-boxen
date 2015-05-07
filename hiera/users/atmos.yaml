@@ -8,7 +8,7 @@
 # heart's content.
 
 # See https://github.com/boxen/puppet-ruby for docs
-ruby::global::version: "2.2.0"
+ruby::global::version: "2.2.2"
 
 # atmoshax
 boxen::config::srcdir:   "/Users/atmos/p"
