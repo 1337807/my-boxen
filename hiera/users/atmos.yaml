@@ -11,4 +11,5 @@
 ruby::global::version: "2.2.0"
 
 # atmoshax
-boxen::config::srcdir: "/Users/atmos/p"
+boxen::config::srcdir:   "/Users/atmos/p"
+boxen::config::reponame: "atmos/my-boxen"
