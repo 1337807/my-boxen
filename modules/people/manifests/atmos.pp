@@ -48,7 +48,14 @@ class people::atmos {
     require => File["${home}/p"]
   }
 
-  file { ["${home}/.gvimrc", "${home}/.vimrc" ]:
+  file { "${home}/.vimrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/vim/vimrc",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.gvimrc":
     ensure  => link,
     force   => true,
     target  => "${dotfiles}/vim/gvimrc",
