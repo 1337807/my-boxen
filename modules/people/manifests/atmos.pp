@@ -1,5 +1,11 @@
-class people::atmos {
-  include projects::all
+class people::atmos (
+  $projects = {},
+  $private_projects = {},
+) {
+  include projects::personal
+
+  create_resources(boxen::project, $projects)
+  create_resources(boxen::project, $private_projects)
 
   $home     = '/Users/atmos'
   $dotfiles = "${home}/p/dotfiles"
@@ -95,9 +101,6 @@ class people::atmos {
     require => Repository[$dotfiles]
   }
 
-  # Stuff I need from homebrew
-  package { [ 'bash-completion', 'coreutils', 'ctags-exuberant', 'tmux' ]: }
-
   boxen::osx_defaults {
     'Disable auto-play on importing in iTunes':
       user   => $::luser,
@@ -124,17 +127,5 @@ class people::atmos {
       key    => 'orientation',
       domain => 'com.apple.dock',
       value  => 'right';
-  }
-
-  # ensure bundler is installed for all ruby versions
-  ruby_gem { 'bundler for all rubies':
-    gem          => 'bundler',
-    version      => '~> 1.0',
-    ruby_version => '*',
-  }
-  ruby_gem { 'heroku for all rubies':
-    gem          => 'heroku',
-    version      => '~> 3.36.0',
-    ruby_version => '*',
   }
 }
