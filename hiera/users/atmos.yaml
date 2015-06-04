@@ -64,6 +64,10 @@ people::atmos::projects:
     nodejs: v0.10.29
     source: atmos/hubot-gtalk
 
+  peonies:
+    nodejs: v0.10.29
+    source: atmos/peonies
+
 people::atmos::private_projects:
   zero-fucks-hubot:
     nodejs: v0.10.29
