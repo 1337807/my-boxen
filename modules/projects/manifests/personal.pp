@@ -56,7 +56,7 @@ class projects::personal (
   include ruby::global
 
   ruby::version { $rubies: }
-  
+
   ruby_gem { 'bundler for all rubies':
     gem          => 'bundler',
     version      => '~> 1.0',
