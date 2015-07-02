@@ -42,7 +42,7 @@ people::atmos::projects:
     source: atmos/camo
 
   heaven:
-    ruby: 2.1.2
+    ruby: 2.2.2
     redis: true
     nginx: true
     source: atmos/heaven
@@ -64,9 +64,17 @@ people::atmos::projects:
     nodejs: v0.12.4
     source: atmos/hubot-gtalk
 
-  peonies:
+  electrogram:
     nodejs: v0.12.4
-    source: atmos/peonies
+    source: atmos/electrogram
+
+  slack-client-atmos:
+    nodejs: v0.12.4
+    source: atmos/node-slack-client
+
+  atmos-dot-org:
+    ruby: 2.2.2
+    source: atmos/atmos.github.io
 
 people::atmos::private_projects:
   zero-fucks-hubot:
