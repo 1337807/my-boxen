@@ -78,17 +78,19 @@ people::atmos::projects:
     source: atmos/atmos.github.io
 
 people::atmos::private_projects:
-  zero-fucks-hubot:
-    nodejs: v0.12.4
-    source: ZeroFucks/zero-fucks-hubot
+  newzcache-web:
+    ruby: 2.2.2
+    source: pyrot/newzcache-web
+  nzb-stream:
+    source: pyrot/nzb-stream
+  parlour-ios:
+    source: pyrot/parlour-ios
   pyrot:
     ruby: 2.2.2
     source: pyrot/pyrot
   toryp:
     ruby: 2.2.2
     source: pyrot/toryp
-  newzcache-web:
-    ruby: 2.2.2
-    source: pyrot/newzcache-web
-  parlour-ios:
-    source: pyrot/parlour-ios
+  zero-fucks-hubot:
+    nodejs: v0.12.4
+    source: ZeroFucks/zero-fucks-hubot
