@@ -21,6 +21,7 @@ projects::personal::homebrew_packages:
   - bash-completion
   - coreutils
   - ctags
+  - go
   - gpgme
   - gnu-sed
   - heroku-toolbelt
