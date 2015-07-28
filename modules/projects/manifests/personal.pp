@@ -54,7 +54,6 @@ class projects::personal (
   create_resources(boxen::project, $custom_projects)
 
   include ruby::global
-
   ruby::version { $rubies: }
 
   ruby_gem { 'bundler for all rubies':
