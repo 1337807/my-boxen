@@ -31,6 +31,7 @@ projects::personal::homebrew_packages:
   - mobile-shell
   - mtr
   - packer
+  - python
   - reattach-to-user-namespace
   - the_silver_searcher
   - tmux
