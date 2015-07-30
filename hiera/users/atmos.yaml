@@ -19,6 +19,7 @@ projects::personal::homebrew_packages:
   - ansible
   - awscli
   - bash-completion
+  - cmake
   - coreutils
   - ctags
   - go
