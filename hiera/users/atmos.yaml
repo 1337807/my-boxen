@@ -36,6 +36,7 @@ projects::personal::homebrew_packages:
   - tmux
   - socat
   - watch
+  - wget
 
 people::atmos::projects:
   camo:
