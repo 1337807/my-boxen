@@ -7,7 +7,7 @@ class people::atmos (
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
 
-  $home     = '/Users/atmos'
+  $home     = '/Users/cdonohoe'
   $dotfiles = "${home}/p/dotfiles"
 
   git::config::global {
@@ -45,6 +45,11 @@ class people::atmos (
 
   file {
     ["${home}/.vimswap"]:
+      ensure => directory;
+  }
+
+  file {
+    ["${home}/p"]:
       ensure => directory;
   }
 
