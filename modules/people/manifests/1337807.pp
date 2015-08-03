@@ -133,12 +133,4 @@ class people::1337807 (
   include osx::global::key_repeat_delay
   include osx::global::key_repeat_rate
   include osx::global::natural_mouse_scrolling
-
-  include osx::dock::hot_corners { top_right => "Start Screen Saver" }
-  class { 'osx::dock::hot_corners':
-    top_right => "Start Screen Saver"
-  }
-  class { 'osx::sound::interface_sound_effects':
-    enable => false
-  }
 }

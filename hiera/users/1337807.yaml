@@ -11,15 +11,12 @@
 ruby::provider: "chruby"
 ruby::global::version: "2.2.2"
 
-# Project directory
-boxen::config::srcdir:   "/Users/1337807/p"
-
 # my-boxen repo on Github
 boxen::config::reponame: "1337807/my-boxen"
 
-osx::global::expand_print_dialog:
-osx::global::disable_key_press_and_hold:
-osx::global::enable_keyboard_control_access:
+people::1337807::projects:
+  dotfiles:
+    source: 1337807/dotfiles
 
 projects::personal::homebrew_packages:
   - ansible
@@ -86,3 +83,6 @@ projects::personal::casks:
   - mailbox
   - sublime-text
   - virtualbox
+
+projects::personal::includes:
+  - osx
