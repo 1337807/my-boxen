@@ -1,0 +1,88 @@
+---
+# This is an example of the kinds of things that you can configure via hiera.
+# If you've left the defaults in `/hiera.yml`, you might want to copy this file
+# to `hiera/common.yaml`, or feel free to start with a blank slate!
+
+# Have a gander at some of these examples to get an idea of some of the things
+# that you can affect 'out of the box', and then customise to your
+# heart's content.
+
+# See https://github.com/boxen/puppet-ruby for docs
+ruby::provider: "chruby"
+ruby::global::version: "2.2.2"
+
+# Project directory
+boxen::config::srcdir:   "/Users/1337807/p"
+
+# my-boxen repo on Github
+boxen::config::reponame: "1337807/my-boxen"
+
+osx::global::expand_print_dialog:
+osx::global::disable_key_press_and_hold:
+osx::global::enable_keyboard_control_access:
+
+projects::personal::homebrew_packages:
+  - ansible
+  - autoconf
+  - automake
+  - awscli
+  - binutils
+  - boot2docker
+  - chruby-fish
+  - cmake
+  - coreutils
+  - ctags
+  - docker
+  - fish
+  - gcc
+  - glib
+  - go
+  - gpgme
+  - gnu-sed
+  - heroku-toolbelt
+  - ipcalc
+  - jq
+  - libffi
+  - lua
+  - mobile-shell
+  - mtr
+  - nginx
+  - nmap
+  - node
+  - openssl
+  - packer
+  - postgresql
+  - pkg-config
+  - python
+  - readline
+  - reattach-to-user-namespace
+  - redis
+  - rust
+  - scala
+  - siege
+  - sqlite
+  - the_silver_searcher
+  - tmux
+  - vim
+  - socat
+  - watch
+  - wemux
+  - wget
+  - wrk
+  - zeromq
+
+projects::personal::casks:
+  - 1password
+  - adium
+  - alfred
+  - dash
+  - divvy
+  - dropbox
+  - evernote
+  - firefox
+  - google-chrome
+  - grandperspective
+  - iterm2
+  - mailbox
+  - sublime-text
+  - virtualbox

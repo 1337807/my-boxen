@@ -1,4 +1,4 @@
-class people::atmos (
+class people::1337807 (
   $projects = {},
   $private_projects = {},
 ) {
@@ -7,7 +7,7 @@ class people::atmos (
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
 
-  $home     = '/Users/cdonohoe'
+  $home     = '/Users/jonan'
   $dotfiles = "${home}/p/dotfiles"
 
   git::config::global {
@@ -38,13 +38,13 @@ class people::atmos (
     'core.whitespace':
       value => 'trailing-space,space-before-tab';
     'user.email':
-      value => 'atmos@atmos.org';
+      value => 'jonanscheffler@gmail.com';
     'user.name':
-      value => 'Corey Donohoe';
+      value => 'Jonan Scheffler';
   }
 
   file {
-    ["${home}/.vimswap"]:
+    ["${home}/.vim/swapfiles"]:
       ensure => directory;
   }
 
@@ -55,7 +55,13 @@ class people::atmos (
 
   repository { $dotfiles:
     path    => $dotfiles,
-    source  => 'atmos/dotfiles',
+    source  => '1337807/dotfiles',
+    require => File["${home}/p"]
+  }
+
+  repository { $dotvim:
+    path    => "${home}/p/dotvim",
+    source  => "1337807/dotfiles",
     require => File["${home}/p"]
   }
 
@@ -99,38 +105,40 @@ class people::atmos (
     force  => true
   }
 
-  # I don't differentiate between login/non shells.
-  file { ["${home}/.bash_profile", "${home}/.bashrc"]:
-    ensure  => link,
-    target  => "${dotfiles}/bash/main.sh",
-    require => Repository[$dotfiles]
-  }
-
   boxen::osx_defaults {
     'Disable auto-play on importing in iTunes':
       user   => $::luser,
       key    => 'play-songs-while-importing',
       domain => 'com.apple.iTunes',
       value  => false;
-    'Securely Empty Trash':
-      user   => $::luser,
-      key    => 'EmptyTrashSecurely',
-      domain => 'com.apple.finder',
-      value  => true;
-    'Disable Crazy Character Popup on hold':
-      user   => $::luser,
-      domain => 'NSGlobalDomain',
-      key    => 'ApplePressAndHoldEnabled',
-      value  => false;
     'Minimize on Titlebar Double-Click':
       user   => $::luser,
       key    => 'AppleMiniaturizeOnDoubleClick',
       domain => 'NSGlobalDomain',
       value  => true;
-    'Put my Dock on the right':
-      user   => $::luser,
-      key    => 'orientation',
-      domain => 'com.apple.dock',
-      value  => 'right';
+  }
+
+  osx::recovery_message { 'If found: call 503-985-6626, email jonanscheffler@gmail.com, tweet @1337807': }
+
+  include osx::global::enable_keyboard_control_access
+  include osx::global::disable_key_press_and_hold
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::global::disable_autocorrect
+  include osx::finder::empty_trash_securely
+  include osx::finder::show_all_filename_extensions
+  include osx::finder::no_file_extension_warnings
+  include osx::disable_app_quarantine
+  include osx::software_update
+  include osx::global::key_repeat_delay
+  include osx::global::key_repeat_rate
+  include osx::global::natural_mouse_scrolling
+
+  include osx::dock::hot_corners { top_right => "Start Screen Saver" }
+  class { 'osx::dock::hot_corners':
+    top_right => "Start Screen Saver"
+  }
+  class { 'osx::sound::interface_sound_effects':
+    enable => false
   }
 }
