@@ -50,7 +50,7 @@ class people::1337807 (
     target => $oh-my-fish
   }
 
-  package { 'Virtualbox':
+  package { 'VirtualBox':
       ensure => installed,
       source => 'http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg',
       provider => pkgdmg
