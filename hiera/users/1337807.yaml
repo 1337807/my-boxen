@@ -18,6 +18,9 @@ people::1337807::projects:
   dotfiles:
     source: 1337807/dotfiles
 
+projects::personal::includes:
+  - osx
+
 projects::personal::homebrew_packages:
   - ansible
   - autoconf

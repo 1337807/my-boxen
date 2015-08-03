@@ -57,7 +57,6 @@ github "ruby",        "8.5.2"
 github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
-github "osx",         "2.8.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
@@ -66,3 +65,4 @@ github "mysql",         "2.0.1"
 github "postgresql",    "3.0.3"
 github "redis",         "3.1.0"
 github "sysctl",        "1.0.1"
+github "osx",           "2.8.0"
