@@ -55,7 +55,6 @@ projects::personal::homebrew_packages:
   - reattach-to-user-namespace
   - redis
   - rust
-  - scala
   - siege
   - sqlite
   - the_silver_searcher
@@ -63,7 +62,6 @@ projects::personal::homebrew_packages:
   - vim
   - socat
   - watch
-  - wemux
   - wget
   - wrk
   - zeromq
