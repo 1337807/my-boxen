@@ -8,7 +8,6 @@ class people::1337807 (
   create_resources(boxen::project, $private_projects)
 
   $home     = '/Users/jonan'
-  $dotfiles = "${home}/dotfiles"
 
   git::config::global {
     'apply.whitespace':
@@ -34,13 +33,33 @@ class people::1337807 (
   }
 
   repository { $dotfiles:
-    path    => $dotfiles,
     source  => '1337807/dotfiles'
   }
 
   repository { $dotvim:
-    path    => "${home}/dotvim",
     source  => "1337807/dotfiles"
+  }
+
+  repository { $oh-my-fish:
+    source  => "1337807/oh-my-fish"
+  }
+
+  file { "${home}/.oh-my-fish":
+    ensure => link,
+    force => true,
+    target => $oh-my-fish
+  }
+
+  package { 'Virtualbox':
+      ensure => installed,
+      source => 'http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg',
+      provider => pkgdmg
+  }
+
+  package { 'TeamViewer':
+      ensure => installed,
+      source => 'http://download.teamviewer.com/download/TeamViewer.dmg',
+      provider => pkgdmg
   }
 
   file { '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin':
