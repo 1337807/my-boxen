@@ -29,6 +29,8 @@ class people::1337807 (
       value => 'jonanscheffler@gmail.com';
     'user.name':
       value => 'Jonan Scheffler';
+    'push.default':
+      value => 'simple';
   }
 
   repository { $dotfiles:
