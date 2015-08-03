@@ -117,20 +117,4 @@ class people::1337807 (
       domain => 'NSGlobalDomain',
       value  => true;
   }
-
-  osx::recovery_message { 'If found: call 503-985-6626, email jonanscheffler@gmail.com, tweet @1337807': }
-
-  include osx::global::enable_keyboard_control_access
-  include osx::global::disable_key_press_and_hold
-  include osx::global::expand_print_dialog
-  include osx::global::expand_save_dialog
-  include osx::global::disable_autocorrect
-  include osx::finder::empty_trash_securely
-  include osx::finder::show_all_filename_extensions
-  include osx::finder::no_file_extension_warnings
-  include osx::disable_app_quarantine
-  include osx::software_update
-  include osx::global::key_repeat_delay
-  include osx::global::key_repeat_rate
-  include osx::global::natural_mouse_scrolling
 }
