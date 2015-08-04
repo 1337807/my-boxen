@@ -11,6 +11,20 @@ class people::1337807 (
   $dotvim   = "${home}/src/dotvim"
   $ohmyfish = "${home}/src/oh-my-fish"
 
+  $dotfiles_to_link = [
+    "ackrc",
+    "agignore",
+    "aliases",
+    "gemrc",
+    "gitconfig",
+    "gitignore",
+    "inputrc",
+    "irbrc",
+    "my.cnf",
+    "pryrc",
+    "wgetrc"
+  ]
+
   git::config::global {
     'apply.whitespace':
       value => 'fix';
@@ -42,12 +56,6 @@ class people::1337807 (
     source  => "1337807/oh-my-fish"
   }
 
-  file { "${home}/.oh-my-fish":
-    ensure => link,
-    force  => true,
-    target => $ohmyfish
-  }
-
   package { 'VirtualBox':
       ensure => installed,
       source => 'http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg',
@@ -63,6 +71,32 @@ class people::1337807 (
   file { '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin':
     ensure => absent,
     force  => true
+  }
+
+  file { "${home}/.oh-my-fish":
+    ensure => link,
+    force  => true,
+    target => $ohmyfish
+  }
+
+  file { "${home}/.oh-my-fish":
+    ensure => link,
+    force  => true,
+    target => $ohmyfish
+  }
+
+  file { "${home}/bin":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/bin"
+  }
+
+  $dotfiles_to_link.each |String $dotfile_to_link| {
+    file { "${home}/.${dotfile_to_link}":
+      ensure => link,
+      force  => true,
+      target => "${dotfiles}/${dotfile_to_link}"
+    }
   }
 
   exec { 'rake-dotfiles':
