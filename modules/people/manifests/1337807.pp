@@ -65,12 +65,6 @@ class people::1337807 (
     target => $ohmyfish
   }
 
-  file { "${home}/.oh-my-fish":
-    ensure => link,
-    force  => true,
-    target => $ohmyfish
-  }
-
   file { "${home}/bin":
     ensure => link,
     force  => true,
