@@ -92,7 +92,7 @@ class people::1337807 (
   }
 
   each($dotfiles_to_link) |$dotfile| {
-    file { "${home}/.$dotfile_to_link":
+    file { "${home}/.$dotfile":
       ensure => link,
       force  => true,
       target => "${dotfiles}/$dotfile"
