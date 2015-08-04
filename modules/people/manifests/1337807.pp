@@ -90,12 +90,6 @@ class people::1337807 (
     target => "${dotfiles}/aliases"
   }
 
-  file { "${home}/.gitconfig":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/gitconfig"
-  }
-
   file { "${home}/.gitignore":
     ensure => link,
     force  => true,
