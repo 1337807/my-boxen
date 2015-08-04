@@ -11,20 +11,6 @@ class people::1337807 (
   $dotvim   = "${home}/src/dotvim"
   $ohmyfish = "${home}/src/oh-my-fish"
 
-  $dotfiles_to_link = [
-    "ackrc",
-    "agignore",
-    "aliases",
-    "gemrc",
-    "gitconfig",
-    "gitignore",
-    "inputrc",
-    "irbrc",
-    "my.cnf",
-    "pryrc",
-    "wgetrc"
-  ]
-
   git::config::global {
     'apply.whitespace':
       value => 'fix';
@@ -91,12 +77,70 @@ class people::1337807 (
     target => "${dotfiles}/bin"
   }
 
-  each($dotfiles_to_link) |$dotfile| {
-    file { "${home}/.${dotfile}":
-      ensure => link,
-      force  => true,
-      target => "${dotfiles}/${dotfile}"
-    }
+  file {"$home}/.ackrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/ackrc"
+  }
+
+  file {"$home}/.agignore":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/agignore"
+  }
+
+  file {"$home}/.aliases":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/aliases"
+  }
+
+  file {"$home}/.gemrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/gemrc"
+  }
+
+  file {"$home}/.gitconfig":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/gitconfig"
+  }
+
+  file {"$home}/.gitignore":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/gitignore"
+  }
+
+  file {"$home}/.inputrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/inputrc"
+  }
+
+  file {"$home}/.irbrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/irbrc"
+  }
+
+  file {"$home}/.my.cnf":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/my.cnf"
+  }
+
+  file {"$home}/.pryrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/pryrc"
+  }
+
+  file {"$home}/.wgetrc":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/wgetrc"
   }
 
   exec { 'rake-dotfiles':
