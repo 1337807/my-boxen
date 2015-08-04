@@ -30,7 +30,6 @@ projects::personal::homebrew_packages:
   - coreutils
   - ctags
   - docker
-  - fish
   - gcc
   - glib
   - go

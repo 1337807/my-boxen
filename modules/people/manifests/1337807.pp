@@ -3,6 +3,7 @@ class people::1337807 (
   $private_projects = {},
 ) {
   include projects::personal
+  include fish
 
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
