@@ -8,6 +8,9 @@ class people::1337807 (
   create_resources(boxen::project, $private_projects)
 
   $home     = '/Users/jonan'
+  $dotfiles = "${home}/src/dotfiles"
+  $dotvim   = "${home}/src/dotvim"
+  $ohmyfish = "${home}/src/oh-my-fish"
 
   git::config::global {
     'apply.whitespace':
@@ -32,22 +35,22 @@ class people::1337807 (
       value => 'simple';
   }
 
-  repository { "dotfiles":
+  repository { $dotfiles:
     source  => '1337807/dotfiles'
   }
 
-  repository { "dotvim":
+  repository { $dotvim:
     source  => "1337807/dotvim"
   }
 
-  repository { "oh-my-fish":
+  repository { $ohmyfish:
     source  => "1337807/oh-my-fish"
   }
 
   file { "${home}/.oh-my-fish":
     ensure => link,
-    force => true,
-    target => "${home}/src/oh-my-fish"
+    force  => true,
+    target => $ohmyfish
   }
 
   package { 'VirtualBox':
