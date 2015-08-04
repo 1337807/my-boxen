@@ -66,6 +66,12 @@ class people::1337807 (
     target => $ohmyfish
   }
 
+  file { "${home}/.vim":
+    ensure => link,
+    force  => true,
+    target => $dotvim
+  }
+
   file { "${home}/bin":
     ensure => link,
     force  => true,
