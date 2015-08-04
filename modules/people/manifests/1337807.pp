@@ -9,7 +9,7 @@ class people::1337807 (
 
   $home     = '/Users/jonan'
   $dotvim   = "${home}/src/dotvim"
-  $dotfiles = "${home}/dotfiles"
+  $dotfiles = "${home}/src/dotfiles"
   $ohmyfish = "${home}/src/oh-my-fish"
 
   git::config::global {
@@ -88,6 +88,12 @@ class people::1337807 (
     ensure => link,
     force  => true,
     target => "${dotfiles}/aliases"
+  }
+
+  file { "${home}/.gitconfig":
+    ensure => link,
+    force  => true,
+    target => "${dotfiles}/gitconfig"
   }
 
   file { "${home}/.gitignore":
