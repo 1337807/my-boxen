@@ -65,6 +65,12 @@ class people::1337807 (
     force  => true
   }
 
+  exec { 'rake-dotfiles':
+    command => 'rake install:fish',
+    require => $dotfiles,
+    cwd     => $dotfiles
+  }
+
   boxen::osx_defaults {
     'Disable auto-play on importing in iTunes':
       user   => $::luser,
