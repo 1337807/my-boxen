@@ -32,22 +32,22 @@ class people::1337807 (
       value => 'simple';
   }
 
-  repository { $dotfiles:
+  repository { "dotfiles":
     source  => '1337807/dotfiles'
   }
 
-  repository { $dotvim:
-    source  => "1337807/dotfiles"
+  repository { "dotvim":
+    source  => "1337807/dotvim"
   }
 
-  repository { $oh-my-fish:
+  repository { "oh-my-fish":
     source  => "1337807/oh-my-fish"
   }
 
   file { "${home}/.oh-my-fish":
     ensure => link,
     force => true,
-    target => $oh-my-fish
+    target => "${home}/src/oh-my-fish"
   }
 
   package { 'VirtualBox':
