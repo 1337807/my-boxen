@@ -9,6 +9,7 @@ class people::1337807 (
 
   $home     = '/Users/jonan'
   $dotvim   = "${home}/src/dotvim"
+  $dotfiles = "${home}/dotfiles"
   $ohmyfish = "${home}/src/oh-my-fish"
 
   git::config::global {
@@ -135,12 +136,6 @@ class people::1337807 (
     ensure => link,
     force  => true,
     target => "${dotfiles}/wgetrc"
-  }
-
-  exec { 'rake-dotfiles':
-    command => 'rake install:fish',
-    require => $dotfiles,
-    cwd     => $dotfiles
   }
 
   boxen::osx_defaults {
