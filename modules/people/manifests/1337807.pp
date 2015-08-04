@@ -8,7 +8,6 @@ class people::1337807 (
   create_resources(boxen::project, $private_projects)
 
   $home     = '/Users/jonan'
-  $dotfiles = "${home}/src/dotfiles"
   $dotvim   = "${home}/src/dotvim"
   $ohmyfish = "${home}/src/oh-my-fish"
 
@@ -33,10 +32,6 @@ class people::1337807 (
       value => 'Jonan Scheffler';
     'push.default':
       value => 'simple';
-  }
-
-  repository { $dotfiles:
-    source  => '1337807/dotfiles'
   }
 
   repository { $dotvim:
