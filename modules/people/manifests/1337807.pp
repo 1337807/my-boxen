@@ -91,7 +91,7 @@ class people::1337807 (
     target => "${dotfiles}/bin"
   }
 
-  $dotfiles_to_link.each |String $dotfile_to_link| {
+  each($dotfiles_to_link) |$dotfile_to_link| {
     file { "${home}/.${dotfile_to_link}":
       ensure => link,
       force  => true,
