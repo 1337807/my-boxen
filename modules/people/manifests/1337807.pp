@@ -78,61 +78,61 @@ class people::1337807 (
     target => "${dotfiles}/ackrc"
   }
 
-  file { "{$home}/.agignore":
+  file { "${home}/.agignore":
     ensure => link,
     force  => true,
     target => "${dotfiles}/agignore"
   }
 
-  file { "{$home}/.aliases":
+  file { "${home}/.aliases":
     ensure => link,
     force  => true,
     target => "${dotfiles}/aliases"
   }
 
-  file { "{$home}/.gemrc":
+  file { "${home}/.gemrc":
     ensure => link,
     force  => true,
     target => "${dotfiles}/gemrc"
   }
 
-  file { "{$home}/.gitconfig":
+  file { "${home}/.gitconfig":
     ensure => link,
     force  => true,
     target => "${dotfiles}/gitconfig"
   }
 
-  file { "{$home}/.gitignore":
+  file { "${home}/.gitignore":
     ensure => link,
     force  => true,
     target => "${dotfiles}/gitignore"
   }
 
-  file { "{$home}/.inputrc":
+  file { "${home}/.inputrc":
     ensure => link,
     force  => true,
     target => "${dotfiles}/inputrc"
   }
 
-  file { "{$home}/.irbrc":
+  file { "${home}/.irbrc":
     ensure => link,
     force  => true,
     target => "${dotfiles}/irbrc"
   }
 
-  file { "{$home}/.my.cnf":
+  file { "${home}/.my.cnf":
     ensure => link,
     force  => true,
     target => "${dotfiles}/my.cnf"
   }
 
-  file { "{$home}/.pryrc":
+  file { "${home}/.pryrc":
     ensure => link,
     force  => true,
     target => "${dotfiles}/pryrc"
   }
 
-  file { "{$home}/.wgetrc":
+  file { "${home}/.wgetrc":
     ensure => link,
     force  => true,
     target => "${dotfiles}/wgetrc"
