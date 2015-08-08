@@ -14,7 +14,7 @@ ruby::global::version: "2.2.2"
 # my-boxen repo on Github
 boxen::config::reponame: "1337807/my-boxen"
 
-people::1337807::projects:
+people::jscheffler::projects:
   dotfiles:
     source: 1337807/dotfiles
 

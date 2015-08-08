@@ -1,4 +1,4 @@
-class people::1337807 (
+class people::jscheffler (
   $projects = {},
   $private_projects = {},
 ) {
@@ -8,7 +8,7 @@ class people::1337807 (
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
 
-  $home     = '/Users/jscheffler'
+  $home     = "/Users/${::boxen_user}"
   $dotvim   = "${home}/src/dotvim"
   $dotfiles = "${home}/src/dotfiles"
   $ohmyfish = "${home}/src/oh-my-fish"
