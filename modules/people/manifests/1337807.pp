@@ -8,7 +8,7 @@ class people::1337807 (
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
 
-  $home     = '/Users/jonan'
+  $home     = '/Users/jscheffler'
   $dotvim   = "${home}/src/dotvim"
   $dotfiles = "${home}/src/dotfiles"
   $ohmyfish = "${home}/src/oh-my-fish"
