@@ -4,6 +4,7 @@ class people::1337807 (
 ) {
   include projects::personal
   include fish
+  include fonts::powerline
 
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
