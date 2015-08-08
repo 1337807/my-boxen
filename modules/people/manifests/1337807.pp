@@ -86,7 +86,7 @@ class people::jscheffler (
   }
 
   repository { $ohmyfish:
-    source  => "1337807/oh-my-fish"
+    source  => "1337807/oh-my-fish",
     path    => $ohmyfish,
     require => File["${src}"]
   }
