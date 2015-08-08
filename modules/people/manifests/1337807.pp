@@ -1,4 +1,4 @@
-class people::jscheffler (
+class people::1337807 (
   $projects = {},
   $private_projects = {},
 ) {
