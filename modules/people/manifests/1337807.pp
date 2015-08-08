@@ -15,6 +15,7 @@ class people::1337807 (
   $dotfiles   = "${src}/dotfiles"
   $ohmyfish   = "${src}/oh-my-fish"
   $itermplist = "${home}/Library/Preferences/com.googlecode.iterm2.plist"
+  $divvyplist = "${home}/Library/Preferences/com.mizage.direct.Divvy.plist"
 
   osx::recovery_message { 'If found call 503-985-6626, email jonanscheffler@gmail.com or tweet @1337807': }
 
@@ -148,16 +149,37 @@ class people::1337807 (
     require => Repository[$dotfiles]
   }
 
+  exec { "iterm_installed":
+    command => "/usr/bin/true",
+    onlyif  => "test -e ${itermplist}"
+  }
+
   file { "install_custom_iterm_config":
     ensure  => file,
     path    => $itermplist,
     content => template('people/com.googlecode.iterm2.plist.erb'),
-    require => File[$itermplist]
+    require => Exec["iterm_installed"]
   }
 
   exec { "convert_iterm_xml_to_plist":
     command => "plutil -convert binary1 ${itermplist}",
     require => File["install_custom_iterm_config"]
+  }
+
+  exec { "divvy_installed":
+    command => "/usr/bin/true",
+    onlyif  => "test -e ${divvyplist}"
+  }
+
+  file { $divvyplist:
+    ensure  => file,
+    source  => "${dotfiles}/divvy/com.mizage.direct.Divvy.plist",
+    require => Exec["divvy_installed"]
+  }
+
+  exec { "convert_divvy_xml_to_plist":
+    command => "plutil -convert binary1 ${home}/Library/Preferences/com.mizage.direct.Divvy.plist",
+    require => File[$divvyplist]
   }
 
   file { "${home}/.ackrc":
