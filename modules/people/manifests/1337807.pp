@@ -149,8 +149,7 @@ class people::1337807 (
 
   file { "${home}/Library/Preferences/com.googlecode.iterm2.plist":
     ensure  => file,
-    force   => true,
-    target  => "${dotfiles}/iterm/com.googlecode.iterm2.plist"
+    content => template('people/com.googlecode.iterm2.plist.erb')
   }
 
   file { "${home}/.ackrc":
