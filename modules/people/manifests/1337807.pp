@@ -148,7 +148,6 @@ class people::1337807 (
   }
 
   file { "${home}/Library/Preferences/com.googlecode.iterm2.plist":
-    ensure  => link,
     force   => true,
     target  => "${dotfiles}/iterm/com.googlecode.iterm2.plist"
   }
