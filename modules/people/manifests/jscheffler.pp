@@ -9,9 +9,10 @@ class people::jscheffler (
   create_resources(boxen::project, $private_projects)
 
   $home     = "/Users/${::boxen_user}"
-  $dotvim   = "${home}/src/dotvim"
-  $dotfiles = "${home}/src/dotfiles"
-  $ohmyfish = "${home}/src/oh-my-fish"
+  $src      = "${home}/src"
+  $dotvim   = "${src}/dotvim"
+  $dotfiles = "${src}/dotfiles"
+  $ohmyfish = "${src}/oh-my-fish"
 
   osx::recovery_message { 'If found call 503-985-6626, email jonanscheffler@gmail.com or tweet @1337807': }
 
@@ -79,11 +80,15 @@ class people::jscheffler (
   }
 
   repository { $dotvim:
-    source  => "1337807/dotvim"
+    source  => "1337807/dotvim",
+    path    => $dotvim,
+    require => File["${src}"]
   }
 
   repository { $ohmyfish:
     source  => "1337807/oh-my-fish"
+    path    => $ohmyfish,
+    require => File["${src}"]
   }
 
   package { 'VirtualBox':
@@ -106,7 +111,8 @@ class people::jscheffler (
   file { "${home}/.oh-my-fish":
     ensure => link,
     force  => true,
-    target => $ohmyfish
+    target => $ohmyfish,
+    require => Repository[$dotfiles]
   }
 
   exec { "omf_install_theme":
@@ -118,75 +124,87 @@ class people::jscheffler (
   }
 
   file { "${home}/.config/fish/config.fish":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/fish/config.fish"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/fish/config.fish",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.vim":
-    ensure => link,
-    force  => true,
-    target => $dotvim
+    ensure  => link,
+    force   => true,
+    target  => $dotvim,
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/bin":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/bin"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/bin",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.ackrc":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/ackrc"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/ackrc",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.agignore":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/agignore"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/agignore",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.aliases":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/aliases"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/aliases",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.gitignore":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/gitignore"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/gitignore",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.inputrc":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/inputrc"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/inputrc",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.irbrc":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/irbrc"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/irbrc",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.my.cnf":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/my.cnf"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/my.cnf",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.pryrc":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/pryrc"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/pryrc",
+    require => Repository[$dotfiles]
   }
 
   file { "${home}/.wgetrc":
-    ensure => link,
-    force  => true,
-    target => "${dotfiles}/wgetrc"
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/wgetrc",
+    require => Repository[$dotfiles]
   }
 
   boxen::osx_defaults {
