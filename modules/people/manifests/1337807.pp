@@ -9,11 +9,12 @@ class people::1337807 (
   create_resources(boxen::project, $projects)
   create_resources(boxen::project, $private_projects)
 
-  $home     = "/Users/${::boxen_user}"
-  $src      = "${home}/src"
-  $dotvim   = "${src}/dotvim"
-  $dotfiles = "${src}/dotfiles"
-  $ohmyfish = "${src}/oh-my-fish"
+  $home       = "/Users/${::boxen_user}"
+  $src        = "${home}/src"
+  $dotvim     = "${src}/dotvim"
+  $dotfiles   = "${src}/dotfiles"
+  $ohmyfish   = "${src}/oh-my-fish"
+  $itermplist = "${home}/Library/Preferences/com.googlecode.iterm2.plist"
 
   osx::recovery_message { 'If found call 503-985-6626, email jonanscheffler@gmail.com or tweet @1337807': }
 
@@ -147,9 +148,16 @@ class people::1337807 (
     require => Repository[$dotfiles]
   }
 
-  file { "${home}/Library/Preferences/com.googlecode.iterm2.plist":
+  file { "install_custom_iterm_config":
     ensure  => file,
-    content => template('people/com.googlecode.iterm2.plist.erb')
+    path    => $itermplist,
+    content => template('people/com.googlecode.iterm2.plist.erb'),
+    require => File[$itermplist]
+  }
+
+  exec { "convert_iterm_xml_to_plist":
+    command => "plutil -convert binary1 ${itermplist}",
+    require => File["install_custom_iterm_config"]
   }
 
   file { "${home}/.ackrc":

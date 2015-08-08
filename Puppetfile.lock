@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: 1337807/puppet-fonts
+  specs:
+    fonts (0.0.6)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.10.4)
@@ -144,6 +149,7 @@ DEPENDENCIES
   dnsmasq (= 2.0.1)
   elasticsearch (= 2.7.2)
   fish (= 1.0.0)
+  fonts (= 0.0.6)
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
