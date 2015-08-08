@@ -147,6 +147,12 @@ class people::1337807 (
     require => Repository[$dotfiles]
   }
 
+  file { "${home}/Library/Preferences/com.googlecode.iterm2.plist":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/iterm/com.googlecode.iterm2.plist"
+  }
+
   file { "${home}/.ackrc":
     ensure  => link,
     force   => true,
