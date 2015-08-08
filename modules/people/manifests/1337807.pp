@@ -117,12 +117,14 @@ class people::1337807 (
 
   exec { "omf_install_theme":
     command => "echo 'omf install theme' | /usr/local/bin/fish",
-    require => File['/usr/local/bin/fish']
+    require => Class['fish'],
+    require => File["${home}/.oh-my-fish"]
   }
 
   exec { "omf_install_bobthefish":
     command => "echo 'omf install bobthefish' | /usr/local/bin/fish",
-    require => File['/usr/local/bin/fish']
+    require => Class['fish'],
+    require => File["${home}/.oh-my-fish"]
   }
 
   file { "${home}/.config/fish/config.fish":
