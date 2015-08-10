@@ -54,6 +54,7 @@ projects::personal::homebrew_packages:
   - readline
   - reattach-to-user-namespace
   - redis
+  - ruby-install
   - rust
   - siege
   - sqlite
