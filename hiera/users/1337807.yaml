@@ -32,6 +32,7 @@ projects::personal::homebrew_packages:
   - docker
   - gcc
   - glib
+  - gpg
   - go
   - gpgme
   - gnu-sed
