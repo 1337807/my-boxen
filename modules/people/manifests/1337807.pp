@@ -59,6 +59,12 @@ class people::1337807 (
     enabled => true
   }
 
+  homebrew::tap {
+    'nviennot/tmate':
+    } -> package { 'tmate':
+    ensure => present,
+  }
+
   git::config::global {
     'alias.hist':
       value => "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";

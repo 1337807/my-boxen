@@ -29,7 +29,7 @@ projects::personal::homebrew_packages:
   - cmake
   - coreutils
   - ctags
-  - docker
+  - docker-compose
   - gcc
   - glib
   - gpg
