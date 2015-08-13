@@ -68,6 +68,10 @@ class people::1337807 (
   git::config::global {
     'alias.hist':
       value => "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+    'alias.pushf':
+      value => "push --force-with-lease";
+    'alias.put':
+      value => "push -u";
     'apply.whitespace':
       value => 'fix';
     'color.ui':
