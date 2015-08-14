@@ -11,6 +11,7 @@ class people::1337807 (
   $home       = "/Users/${::boxen_user}"
   $src        = "${home}/src"
   $dotvim     = "${src}/dotvim"
+  $powerline  = "${src}/powerline-shell"
   $dotfiles   = "${src}/dotfiles"
   $itermplist = "${home}/Library/Preferences/com.googlecode.iterm2.plist"
   $divvyplist = "${home}/Library/Preferences/com.mizage.direct.Divvy.plist"
@@ -95,6 +96,12 @@ class people::1337807 (
   repository { $dotvim:
     source  => "1337807/dotvim",
     path    => $dotvim,
+    require => File["${src}"]
+  }
+
+  repository { $powerline:
+    source  => "1337807/powerline-shell",
+    path    => $powerline,
     require => File["${src}"]
   }
 
