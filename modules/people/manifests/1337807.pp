@@ -3,7 +3,6 @@ class people::1337807 (
   $private_projects = {},
 ) {
   include projects::personal
-  include fish
   include fonts::powerline
 
   create_resources(boxen::project, $projects)
@@ -13,7 +12,6 @@ class people::1337807 (
   $src        = "${home}/src"
   $dotvim     = "${src}/dotvim"
   $dotfiles   = "${src}/dotfiles"
-  $ohmyfish   = "${src}/oh-my-fish"
   $itermplist = "${home}/Library/Preferences/com.googlecode.iterm2.plist"
   $divvyplist = "${home}/Library/Preferences/com.mizage.direct.Divvy.plist"
 
@@ -91,18 +89,12 @@ class people::1337807 (
     'user.name':
       value => 'Jonan Scheffler';
     'push.default':
-      value => 'simple';
+      value => 'current';
   }
 
   repository { $dotvim:
     source  => "1337807/dotvim",
     path    => $dotvim,
-    require => File["${src}"]
-  }
-
-  repository { $ohmyfish:
-    source  => "1337807/oh-my-fish",
-    path    => $ohmyfish,
     require => File["${src}"]
   }
 
@@ -123,27 +115,87 @@ class people::1337807 (
     force  => true
   }
 
-  file { "${home}/.oh-my-fish":
-    ensure => link,
-    force  => true,
-    target => $ohmyfish,
+  file { "${home}/.ackrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/ackrc",
     require => Repository[$dotfiles]
   }
 
-  exec { "omf_install_theme":
-    command => "echo 'omf install theme' | /usr/local/bin/fish",
-    require => [ Class['fish'], File["${home}/.oh-my-fish"] ]
-  }
-
-  exec { "omf_install_bobthefish":
-    command => "echo 'omf install bobthefish' | /usr/local/bin/fish",
-    require => [ Class['fish'], File["${home}/.oh-my-fish"] ]
-  }
-
-  file { "${home}/.config/fish/config.fish":
+  file { "${home}/.agignore":
     ensure  => link,
     force   => true,
-    target  => "${dotfiles}/fish/config.fish",
+    target  => "${dotfiles}/agignore",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.bash_profile":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/bash_profile",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.bash_prompt":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/bash_prompt",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.bash_scripts":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/bash_scripts",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.exports":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/exports",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.functions":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/functions",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.gitignore":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/gitignore",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.inputrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/inputrc",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.irbrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/irbrc",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.my.cnf":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/my.cnf",
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.pryrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/pryrc",
     require => Repository[$dotfiles]
   }
 
@@ -151,6 +203,13 @@ class people::1337807 (
     ensure  => link,
     force   => true,
     target  => $dotvim,
+    require => Repository[$dotfiles]
+  }
+
+  file { "${home}/.wgetrc":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/wgetrc",
     require => Repository[$dotfiles]
   }
 
@@ -192,69 +251,6 @@ class people::1337807 (
   exec { "convert_divvy_xml_to_plist":
     command => "plutil -convert binary1 ${home}/Library/Preferences/com.mizage.direct.Divvy.plist",
     require => File[$divvyplist]
-  }
-
-  file { "${home}/.ackrc":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/ackrc",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.agignore":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/agignore",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.aliases":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/aliases",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.gitignore":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/gitignore",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.inputrc":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/inputrc",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.irbrc":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/irbrc",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.my.cnf":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/my.cnf",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.pryrc":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/pryrc",
-    require => Repository[$dotfiles]
-  }
-
-  file { "${home}/.wgetrc":
-    ensure  => link,
-    force   => true,
-    target  => "${dotfiles}/wgetrc",
-    require => Repository[$dotfiles]
   }
 
   boxen::osx_defaults {

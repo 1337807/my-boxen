@@ -25,7 +25,7 @@ projects::personal::homebrew_packages:
   - awscli
   - binutils
   - boot2docker
-  - chruby-fish
+  - chruby
   - cmake
   - coreutils
   - ctags
@@ -44,6 +44,7 @@ projects::personal::homebrew_packages:
   - mobile-shell
   - mtr
   - nginx
+  - ngrep
   - nmap
   - node
   - openssl
