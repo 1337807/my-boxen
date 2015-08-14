@@ -122,6 +122,10 @@ class people::1337807 (
     force  => true
   }
 
+  file { "${home}/.local_scripts":
+    ensure => "directory"
+  }
+
   file { "${home}/.ackrc":
     ensure  => link,
     force   => true,
