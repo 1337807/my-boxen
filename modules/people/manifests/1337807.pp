@@ -133,6 +133,13 @@ class people::1337807 (
     require => Repository[$dotfiles]
   }
 
+  file { "${home}/.aliases":
+    ensure  => link,
+    force   => true,
+    target  => "${dotfiles}/aliases",
+    require => Repository[$dotfiles]
+  }
+
   file { "${home}/.agignore":
     ensure  => link,
     force   => true,
