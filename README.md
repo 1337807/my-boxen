@@ -94,7 +94,7 @@ If you _don't_ want to use boxen-web, folks can get using your boxen like so:
 ```
 sudo mkdir -p /opt/boxen
 sudo chown ${USER}:staff /opt/boxen
-git clone https://github.com/1337807/my-boxen.git /opt/boxen/repo
+git clone https://github.com/thejonanshow/my-boxen.git /opt/boxen/repo
 cd /opt/boxen/repo
 ./script/boxen
 ```

@@ -1,4 +1,4 @@
-class people::1337807 (
+class people::thejonanshow (
   $projects = {},
   $private_projects = {},
 ) {
@@ -16,7 +16,7 @@ class people::1337807 (
   $itermplist = "${home}/Library/Preferences/com.googlecode.iterm2.plist"
   $divvyplist = "${home}/Library/Preferences/com.mizage.direct.Divvy.plist"
 
-  osx::recovery_message { 'If found call 503-985-6626, email jonanscheffler@gmail.com or tweet @1337807': }
+  osx::recovery_message { 'If found call 503-985-6626, email jonanscheffler@gmail.com or tweet @thejonanshow': }
 
   include osx::global::disable_key_press_and_hold
   include osx::global::enable_keyboard_control_access
@@ -94,13 +94,13 @@ class people::1337807 (
   }
 
   repository { $dotvim:
-    source  => "1337807/dotvim",
+    source  => "thejonanshow/dotvim",
     path    => $dotvim,
     require => File["${src}"]
   }
 
   repository { $powerline:
-    source  => "1337807/powerline-shell",
+    source  => "thejonanshow/powerline-shell",
     path    => $powerline,
     require => File["${src}"]
   }

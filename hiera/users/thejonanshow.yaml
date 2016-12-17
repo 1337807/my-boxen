@@ -9,14 +9,16 @@
 
 # See https://github.com/boxen/puppet-ruby for docs
 ruby::provider: "chruby"
-ruby::global::version: "2.2.2"
+ruby::global::version: "2.3.1"
 
 # my-boxen repo on Github
-boxen::config::reponame: "1337807/my-boxen"
+boxen::config::reponame: "thejonanshow/my-boxen"
 
-people::1337807::projects:
+git::global_excludesfile: "~/.gitignore"
+
+people::thejonanshow::projects:
   dotfiles:
-    source: 1337807/dotfiles
+    source: thejonanshow/dotfiles
 
 projects::personal::homebrew_packages:
   - ansible
