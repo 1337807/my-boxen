@@ -94,4 +94,4 @@ DEPENDENCIES
   rspec-puppet (= 1.0.1)
 
 BUNDLED WITH
-   1.13.6
+   1.10.6
