@@ -73,7 +73,7 @@ node default {
   ruby::version { '2.1.8': }
   ruby::version { '2.2.0': }
   ruby::version { '2.2.4': }
-  ruby::version { '2.3.1' }
+  ruby::version { '2.3.1': }
 
   # common, useful packages
   package {
