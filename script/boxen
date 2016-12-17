@@ -26,6 +26,7 @@ Dir.chdir Pathname.new(__FILE__).realpath + "../.."
 # Auto-update code. This is done as early as possible so that changes
 # to boxen support code or dependencies can be grabbed.
 
+puts `ruby -v`
 puts "\e[0;36m--> Preparing to auto-update...\e[0m"
 
 def no_pull_arg?(arg)
