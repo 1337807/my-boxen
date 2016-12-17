@@ -1,9 +1,4 @@
 GITHUBTARBALL
-  remote: thejonanshow/puppet-fonts
-  specs:
-    fonts (0.0.6)
-
-GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.10.4)
@@ -51,7 +46,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
-    hub (1.4.1)
+    hub (1.4.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-mysql
@@ -138,6 +133,11 @@ GITHUBTARBALL
   specs:
     module_data (0.0.3)
 
+GITHUBTARBALL
+  remote: thejonanshow/puppet-fonts
+  specs:
+    fonts (0.0.6)
+
 DEPENDENCIES
   boxen (= 3.10.4)
   brewcask (= 0.0.6)
@@ -149,7 +149,7 @@ DEPENDENCIES
   git (= 2.7.9)
   go (= 2.1.0)
   homebrew (= 1.12.0)
-  hub (= 1.4.1)
+  hub (= 1.4.3)
   inifile (= 1.1.1)
   module_data (= 0.0.3)
   mysql (= 2.0.1)
