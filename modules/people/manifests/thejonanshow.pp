@@ -99,7 +99,7 @@ class people::thejonanshow (
     require => File["${src}"]
   }
 
-  package { 'VirtualBox':
+  package { 'Oracle VM VirtualBox':
     ensure => installed,
     source => 'http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg',
     provider => pkgdmg
