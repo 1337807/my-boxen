@@ -9,7 +9,7 @@
 
 # See https://github.com/boxen/puppet-ruby for docs
 ruby::provider: "chruby"
-ruby::global::version: "2.3.1"
+ruby::global::version: "2.3.3"
 
 # my-boxen repo on Github
 boxen::config::reponame: "thejonanshow/my-boxen"
