@@ -8,7 +8,7 @@ GEM
       builder (~> 3.0)
       jmespath (~> 1.0)
       multi_json (~> 1.0)
-    boxen (2.8.0)
+    boxen (2.9.0)
       ansi (~> 1.4)
       hiera (~> 1.0)
       highline (~> 1.6.0)
@@ -80,7 +80,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-core (~> 2.0.11)
-  boxen (~> 2.8.0)
+  boxen (~> 2.9.0)
   deep_merge (~> 1.0)
   hiera (~> 1.0)
   json_pure (= 1.8.3)
@@ -94,4 +94,4 @@ DEPENDENCIES
   rspec-puppet (= 1.0.1)
 
 BUNDLED WITH
-   1.10.6
+   1.13.6
