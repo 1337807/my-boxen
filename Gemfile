@@ -12,6 +12,7 @@ gem "rake",                   "10.3.2"
 gem "rspec-puppet",           "1.0.1"
 gem "deep_merge",             "~> 1.0"
 gem "json_pure",              "1.8.3"
+gem "faraday_middleware"
 
 group :test do
   gem "serverspec"
