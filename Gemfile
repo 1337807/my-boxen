@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-gem "boxen",                  "~> 2.9.0"
+gem "boxen",                  "~> 3.1.1"
 gem "hiera",                  "~> 1.3.3"
-gem "librarian-puppet",       "~> 1.0.9"
+gem "librarian-puppet"
 gem "librarianp", git: "https://github.com/voxpupuli/librarian.git", branch: "librarianp"
 gem "puppet",                 "~> 3.7"
 gem "puppet-lint",            "0.3.2"
